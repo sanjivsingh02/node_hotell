@@ -15,14 +15,18 @@ app.get('/', function (req, res) {
 
 
 
+
+
+
+//import the router
+const personRoutes = require('./routes/personRoutes')
 const mennRoutes = require('./routes/mennRoutes')
+//use router
+app.use('/person',personRoutes)
 app.use('/Menu',mennRoutes) 
 
-  //import the router
-  const personRoutes = require('./routes/personRoutes')
- //use router
- app.use('/person',personRoutes)
 
+  
 app.listen(3000,()=>{
   console.log("serevr is live 3000")
 })
